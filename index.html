@@ -1,688 +1,781 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>دليل التواصل</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل التواصل - جامعة القصيم</title>
     <meta name="description" content="وسائل التواصل مع الجهات المختلفة للوصول إلى مختلف الخدمات.">
-    <meta name="theme-color" content="#F5F7FB">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#eef3f9">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Alexandria:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-      :root {
-        --accent-color: #316FEA;
-        --accent-strong: #1E58C8;
-        --accent-tint: #EAF1FE;
-        --dark-blue: #0A2D57;
-        --navy-deep: #071E3D;
-        --navy-mid: #123E72;
-        --bg-main: #F5F7FB;
-        --bg-card: #FFFFFF;
-        --bg-button: #F1F4FA;
-        --bg-button-hover: #E6EDF9;
-        --text-dark: #16233E;
-        --text-secondary: #7C879C;
-        --line-soft: #EBEFF6;
-        --radius-card: 24px;
-        --radius-button: 16px;
-        --radius-chip: 12px;
-        --shadow-card: 0 1px 2px rgba(16, 35, 62, 0.04), 0 18px 46px -22px rgba(16, 35, 62, 0.22);
-        --shadow-header: 0 18px 40px -20px rgba(10, 45, 87, 0.55);
-        --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-        --header-glow-1: rgba(49, 111, 234, 0.30);
-        --header-glow-2: rgba(49, 111, 234, 0.14);
-        --row-hover: #FFFFFF;
-        color-scheme: light;
-      }
-
-      html[data-theme="dark"] {
-        --accent-color: #5B8DEF;
-        --accent-strong: #86AAF4;
-        --accent-tint: rgba(91, 141, 239, 0.16);
-        --bg-main: #0D1524;
-        --bg-card: #151E33;
-        --bg-button: #1A2540;
-        --bg-button-hover: #223052;
-        --text-dark: #E7ECF6;
-        --text-secondary: #93A0BA;
-        --line-soft: #27324D;
-        --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 20px 50px -24px rgba(0, 0, 0, 0.7);
-        --shadow-header: 0 22px 48px -24px rgba(0, 0, 0, 0.8);
-        --header-glow-1: rgba(91, 141, 239, 0.24);
-        --header-glow-2: rgba(91, 141, 239, 0.12);
-        --row-hover: #1F2C49;
-        color-scheme: dark;
-      }
-
-      * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-      html { scroll-behavior: smooth; }
-
-      body, .content-card, .contact-link, .link-chip, .icon-only-btn,
-      .overlay-page, .overlay-header, .back-btn, .card-header .icon-wrapper, .theme-toggle {
-        transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-      }
-
-      @keyframes popIn {
-        from { opacity: 0; transform: translateY(22px) scale(0.985); }
-        to { opacity: 1; transform: translateY(0) scale(1); }
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.96); }
-        to { opacity: 1; transform: scale(1); }
-      }
-
-      @keyframes slideUp {
-        from { transform: translateY(100%); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-      }
-
-      body {
-        font-family: 'IBM Plex Sans Arabic', sans-serif;
-        background-color: var(--bg-main);
-        background-image:
-          radial-gradient(circle at 100% -10%, var(--header-glow-2), transparent 45%),
-          radial-gradient(circle at 0% 5%, rgba(10, 45, 87, 0.05), transparent 40%);
-        color: var(--text-dark);
-        direction: rtl;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        min-height: 100vh;
-      }
-
-      svg { display: block; flex-shrink: 0; }
-
-      .app-wrapper {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 1.75rem 1.25rem 7rem;
-      }
-
-      .page-header {
-        position: relative;
-        overflow: hidden;
-        background-image:
-          radial-gradient(circle at 88% -10%, var(--header-glow-1), transparent 52%),
-          radial-gradient(circle at 5% 110%, var(--header-glow-2), transparent 45%),
-          linear-gradient(155deg, var(--navy-mid) 0%, var(--dark-blue) 55%, var(--navy-deep) 100%);
-        color: #FFFFFF;
-        padding: 3rem 2rem 2.75rem;
-        border-radius: var(--radius-card);
-        text-align: center;
-        box-shadow: var(--shadow-header);
-        animation: popIn 0.8s var(--ease-out-quint) .05s both;
-        margin-bottom: 1.75rem;
-      }
-      .page-header::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.14), transparent 55%);
-        pointer-events: none;
-      }
-      .header-kicker {
-        position: relative;
-        display: inline-block;
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        color: #BFD2F2;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        padding: 0.3rem 0.85rem;
-        border-radius: 999px;
-        margin-bottom: 1rem;
-      }
-      .page-title {
-        position: relative;
-        font-family: 'Alexandria', 'IBM Plex Sans Arabic', sans-serif;
-        font-size: clamp(2.2rem, 8vw, 2.9rem);
-        font-weight: 700;
-        line-height: 1.25;
-        letter-spacing: -0.01em;
-      }
-      .title-rule {
-        position: relative;
-        display: block;
-        width: 54px;
-        height: 4px;
-        margin: 1rem auto 0;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--accent-color), #7FA8F5);
-      }
-      .page-subtitle {
-        position: relative;
-        font-size: 1rem;
-        max-width: 420px;
-        margin: 1rem auto 0;
-        line-height: 1.75;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.82);
-      }
-
-      .theme-toggle {
-        position: absolute;
-        top: 1.15rem;
-        left: 1.15rem;
-        z-index: 3;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.10);
-        color: #FFFFFF;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        transition: background-color 0.25s ease, transform 0.25s var(--ease-out-quint);
-      }
-      .theme-toggle:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(-18deg); }
-      .theme-toggle svg {
-        position: absolute;
-        width: 20px; height: 20px;
-        transition: opacity 0.35s ease, transform 0.45s var(--ease-out-quint);
-      }
-      .theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
-      .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
-      html[data-theme="dark"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
-      html[data-theme="dark"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
-
-      .content-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .content-card {
-        background-color: var(--bg-card);
-        border: 1px solid var(--line-soft);
-        border-radius: var(--radius-card);
-        padding: 1.5rem 1.35rem;
-        box-shadow: var(--shadow-card);
-        animation: popIn 0.8s var(--ease-out-quint) .18s both;
-      }
-
-      .card-header {
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        margin-bottom: 1.25rem;
-        padding-bottom: 1.1rem;
-        border-bottom: 1px solid var(--line-soft);
-      }
-      .card-header .icon-wrapper {
-        --ci: var(--accent-color);
-        flex-shrink: 0;
-        width: 48px; height: 48px;
-        border-radius: 15px;
-        background: color-mix(in srgb, var(--ci) 16%, transparent);
-        color: var(--ci);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ci) 26%, transparent);
-      }
-      .card-header .icon-wrapper svg { width: 25px; height: 25px; }
-      .card-header .title {
-        font-family: 'Alexandria', 'IBM Plex Sans Arabic', sans-serif;
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--text-dark);
-      }
-
-      .links-group { display: flex; flex-direction: column; gap: 0.7rem; }
-
-      .contact-link {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.7rem 0.9rem;
-        border-radius: var(--radius-button);
-        background: var(--bg-button);
-        border: 1px solid transparent;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: background-color 0.22s var(--ease-out-quint), transform 0.22s var(--ease-out-quint), border-color 0.22s ease, box-shadow 0.22s ease;
-        color: var(--text-dark);
-        width: 100%;
-        cursor: pointer;
-        min-height: 60px;
-      }
-      .contact-link:hover {
-        background-color: var(--row-hover);
-        border-color: var(--line-soft);
-        transform: translateY(-2px);
-        box-shadow: 0 12px 26px -16px rgba(0, 0, 0, 0.3);
-      }
-      .contact-link:hover .link-arrow { opacity: 1; transform: translateX(-3px); }
-
-      .link-main-content {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
-        min-width: 0;
-      }
-      .link-main-content > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-      .link-chip {
-        --ci: var(--accent-color);
-        flex-shrink: 0;
-        width: 42px; height: 42px;
-        border-radius: var(--radius-chip);
-        background: color-mix(in srgb, var(--ci) 15%, transparent);
-        color: var(--ci);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ci) 24%, transparent);
-        transition: background-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease, transform 0.22s var(--ease-out-quint);
-      }
-      .link-chip svg { width: 21px; height: 21px; }
-      .contact-link:hover .link-chip {
-        background: var(--ci);
-        color: #FFFFFF;
-        box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--ci) 70%, transparent);
-        transform: scale(1.05);
-      }
-      .link-arrow {
-        flex-shrink: 0;
-        width: 18px; height: 18px;
-        color: var(--text-secondary);
-        opacity: 0.5;
-        transition: opacity 0.22s ease, transform 0.22s var(--ease-out-quint);
-      }
-
-      .split-wrapper {
-        position: relative;
-        width: 100%;
-        min-height: 60px;
-      }
-      .split-wrapper.active .main-trigger { display: none; }
-
-      .actions-container {
-        display: none;
-        width: 100%;
-        gap: 8px;
-        animation: fadeIn 0.3s var(--ease-out-quint);
-      }
-      .split-wrapper.active .actions-container { display: flex; }
-
-      .icon-only-btn {
-        --ci: var(--accent-color);
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: color-mix(in srgb, var(--ci) 12%, transparent);
-        border-radius: var(--radius-button);
-        color: var(--ci);
-        text-decoration: none;
-        transition: background-color 0.22s ease, transform 0.22s var(--ease-out-quint), color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-        height: 60px;
-        border: 1px solid color-mix(in srgb, var(--ci) 24%, transparent);
-        cursor: pointer;
-      }
-      .icon-only-btn svg { width: 24px; height: 24px; }
-      .icon-only-btn:hover {
-        background-color: var(--ci);
-        border-color: var(--ci);
-        color: #FFFFFF;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 22px -10px color-mix(in srgb, var(--ci) 70%, transparent);
-      }
-
-      .overlay-page {
-        position: fixed;
-        inset: 0;
-        background-color: var(--bg-main);
-        z-index: 1000;
-        display: none;
-        flex-direction: column;
-        overflow-y: auto;
-        animation: slideUp 0.32s var(--ease-out-quint);
-      }
-      .overlay-page.visible { display: flex; }
-
-      .overlay-header {
-        background-color: var(--bg-card);
-        padding: 1.1rem 1.25rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid var(--line-soft);
-        box-shadow: 0 6px 22px -18px rgba(16, 35, 62, 0.5);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-      }
-      .overlay-title {
-        font-family: 'Alexandria', 'IBM Plex Sans Arabic', sans-serif;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--text-dark);
-      }
-      .back-btn {
-        background: var(--bg-button);
-        border: 1px solid var(--line-soft);
-        padding: 0.55rem 1rem;
-        border-radius: 12px;
-        color: var(--accent-strong);
-        font-family: inherit;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: background-color 0.2s ease, transform 0.2s ease;
-      }
-      .back-btn svg { width: 18px; height: 18px; }
-      .back-btn:hover { background: var(--bg-button-hover); transform: translateX(3px); }
-
-      .overlay-content {
-        padding: 1.5rem 1.25rem 4rem;
-        max-width: 760px;
-        margin: 0 auto;
-        width: 100%;
-      }
-      .college-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.7rem;
-      }
-
-      .page-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(0deg, var(--navy-deep), var(--dark-blue));
-        color: white;
-        padding: 0.85rem 1.5rem;
-        font-weight: 600;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.75rem;
-        z-index: 20;
-        box-shadow: 0 -10px 30px -22px rgba(0,0,0,0.7);
-      }
-      .footer-link {
-        color: white;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        opacity: 0.85;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        flex-direction: row-reverse;
-      }
-      .footer-link:hover { opacity: 1; transform: translateY(-2px); }
-      .footer-link .icon-bg {
-        width: 30px; height: 30px;
-        border-radius: 50%;
-        background-color: var(--accent-color);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px -4px rgba(49, 111, 234, 0.7);
-      }
-      .footer-link .icon-bg svg { width: 15px; height: 15px; }
-
-      a:focus-visible, button:focus-visible {
-        outline: 2px solid var(--accent-color);
-        outline-offset: 3px;
-      }
-
-      @media (min-width: 620px) {
-        .college-list { grid-template-columns: 1fr 1fr; }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.001ms !important;
-          scroll-behavior: auto !important;
+        * {
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
         }
-      }
+
+        :root {
+            --primary-color: #0f2b48;
+            --primary-deep: #0a1f36;
+            --secondary-color: #179c8e;
+            --secondary-bright: #4dd8c8;
+            --secondary-soft: rgba(23, 156, 142, 0.1);
+            --page-bg: #eef3f9;
+            --card-bg: #ffffff;
+            --card-border: #e3eaf2;
+            --text-dark: #22303e;
+            --text-gray: #7d8a97;
+
+            --header-grad-1: #0f2b48;
+            --header-grad-2: #14385d;
+            --header-grad-3: #11554f;
+            --shadow-soft: 0 4px 15px rgba(15, 43, 72, 0.05);
+            --shadow-hover: 0 12px 30px rgba(15, 43, 72, 0.1);
+        }
+
+        body.dark {
+            --primary-color: #cfe3f5;
+            --primary-deep: #060e18;
+            --secondary-color: #2fc4b4;
+            --secondary-bright: #4dd8c8;
+            --secondary-soft: rgba(47, 196, 180, 0.12);
+            --page-bg: #0d1520;
+            --card-bg: #16202e;
+            --card-border: #24344a;
+            --text-dark: #e6edf5;
+            --text-gray: #8fa0b3;
+
+            --header-grad-1: #0a1826;
+            --header-grad-2: #0f2438;
+            --header-grad-3: #0c3531;
+            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: var(--page-bg);
+            margin: 0;
+            padding: 0 0 88px 0;
+            color: var(--text-dark);
+            min-height: 100vh;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--header-grad-1) 0%, var(--header-grad-2) 55%, var(--header-grad-3) 100%);
+            padding: 38px 20px 44px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 26px 26px;
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: -90px;
+            left: -90px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(23,156,142,0.28), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner { position: relative; z-index: 2; }
+
+        .uni-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.75);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 9px;
+        }
+
+        .uni-eyebrow::before, .uni-eyebrow::after {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .page-title {
+            font-family: 'Alexandria', 'IBM Plex Sans Arabic', sans-serif;
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 13px;
+            padding: 7px 18px;
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(6px);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .hero-badge i { color: var(--secondary-bright); font-size: 13px; }
+
+        .theme-toggle {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 5;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.22);
+            background: linear-gradient(150deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
+            backdrop-filter: blur(8px);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            background: linear-gradient(150deg, rgba(255,255,255,0.24), rgba(255,255,255,0.06));
+        }
+
+        .theme-toggle:active { transform: scale(0.94); }
+        .theme-toggle:focus-visible { outline: 2px solid var(--secondary-bright); outline-offset: 3px; }
+
+        .theme-toggle i {
+            position: absolute;
+            font-size: 17px;
+            transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .theme-toggle .icon-moon { color: #eaf1fb; opacity: 1; transform: rotate(0deg) scale(1); }
+        .theme-toggle .icon-sun { color: #fbbf24; opacity: 0; transform: rotate(-70deg) scale(0.4); }
+        body.dark .theme-toggle .icon-moon { opacity: 0; transform: rotate(70deg) scale(0.4); }
+        body.dark .theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto 26px auto;
+            padding: 26px 20px 0 20px;
+        }
+
+        .section-head { text-align: center; margin-bottom: 18px; }
+
+        .section-title {
+            font-family: 'Alexandria', 'IBM Plex Sans Arabic', sans-serif;
+            color: var(--text-dark);
+            margin: 0 0 10px 0;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .title-divider {
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--secondary-bright));
+            margin: 0 auto 9px auto;
+            border-radius: 4px;
+        }
+
+        .section-note {
+            color: var(--text-gray);
+            font-size: 12.5px;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .entity-list { display: flex; flex-direction: column; gap: 11px; }
+
+        .entity-card {
+            --ci: #3B82F6;
+            display: block;
+            width: 100%;
+            text-align: right;
+            text-decoration: none;
+            font-family: inherit;
+            border: 2px solid transparent;
+            border-radius: 18px;
+            background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                        linear-gradient(135deg, var(--ci), color-mix(in srgb, var(--ci) 55%, #06121f)) border-box;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            overflow: hidden;
+            padding: 0;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, background-color 0.4s ease;
+        }
+
+        .entity-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+        .entity-card:active { transform: scale(0.98); }
+        .entity-card:focus-visible { outline: 2px solid var(--secondary-color); outline-offset: 3px; }
+
+        .row-inner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 16px;
+        }
+
+        .type-icon {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--ci), color-mix(in srgb, var(--ci) 60%, #06121f));
+            box-shadow: 0 6px 16px -8px var(--ci);
+        }
+
+        .row-text { flex: 1; min-width: 0; }
+
+        .row-name {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .row-arrow {
+            color: var(--text-gray);
+            font-size: 14px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.45, 0.64, 1), color 0.25s ease;
+        }
+
+        .entity-card:hover .row-arrow { color: var(--ci); transform: translateX(-4px); }
+
+        .entity-card.expandable.open .row-arrow { transform: rotate(-90deg); color: var(--ci); }
+
+        .entity-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+            padding: 0 20px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease, padding 0.4s ease;
+        }
+
+        .entity-card.open .entity-actions {
+            max-height: 260px;
+            opacity: 1;
+            padding: 4px 20px 20px 20px;
+        }
+
+        .action-btn {
+            --ai: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 11px 6px;
+            border-radius: 13px;
+            border: 1.5px solid var(--card-border);
+            background: var(--page-bg);
+            color: var(--text-dark);
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .action-btn i { font-size: 16px; color: var(--ai); transition: color 0.25s ease; }
+        .action-btn svg { width: 16px; height: 16px; fill: var(--ai); display: block; }
+
+        .action-btn:hover {
+            border-color: var(--ai);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px -12px var(--ai);
+        }
+
+        .action-btn:focus-visible { outline: 2px solid var(--ai); outline-offset: 2px; }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(6, 14, 24, 0.55);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.open { opacity: 1; visibility: visible; }
+
+        .modal-card {
+            width: 94vw;
+            max-width: 760px;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(6, 14, 24, 0.5);
+            transform: translateY(24px) scale(0.98);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
+
+        .modal-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 20px 22px;
+            border-bottom: 1px solid var(--card-border);
+            background: linear-gradient(135deg, var(--header-grad-1), var(--header-grad-2));
+        }
+
+        .modal-head-text h3 {
+            font-family: 'Alexandria', 'IBM Plex Sans Arabic', sans-serif;
+            color: #fff;
+            font-size: 19px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .modal-head-text p { color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; margin: 4px 0 0 0; }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s, transform 0.25s;
+        }
+
+        .modal-close:hover { background: rgba(255,255,255,0.18); transform: rotate(90deg); }
+        .modal-close:focus-visible { outline: 2px solid var(--secondary-bright); outline-offset: 2px; }
+
+        .modal-body {
+            padding: 18px 20px 22px 20px;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 11px;
+        }
+
+        .college-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 15px;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            background: var(--card-bg);
+            box-shadow: var(--shadow-soft);
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14.5px;
+            font-weight: 700;
+            transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.28s, border-color 0.28s;
+        }
+
+        .college-row:hover {
+            transform: translateY(-3px);
+            border-color: #6366F1;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .college-row:focus-visible { outline: 2px solid #6366F1; outline-offset: 2px; }
+
+        .college-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 11px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #fff;
+            background: linear-gradient(135deg, #6366F1, #4338CA);
+        }
+
+        .college-row span { flex: 1; line-height: 1.55; }
+        .college-row .go { color: var(--text-gray); font-size: 12px; }
+
+        .page-footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            padding: 16px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.06);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.4s ease;
+        }
+
+        .footer-link {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 14px;
+            background-color: var(--page-bg);
+            border: 1px solid var(--card-border);
+            padding: 11px 24px;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .footer-link:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(23, 156, 142, 0.15);
+        }
+
+        .icon-bg { color: var(--secondary-color); font-size: 17px; }
+
+        .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .entity-list .reveal:nth-child(1) { transition-delay: 0.04s; }
+        .entity-list .reveal:nth-child(2) { transition-delay: 0.09s; }
+        .entity-list .reveal:nth-child(3) { transition-delay: 0.14s; }
+        .entity-list .reveal:nth-child(4) { transition-delay: 0.19s; }
+        .entity-list .reveal:nth-child(5) { transition-delay: 0.24s; }
+        .entity-list .reveal:nth-child(6) { transition-delay: 0.29s; }
+
+        @media (min-width: 620px) {
+            .modal-body { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero { padding: 32px 16px 38px 16px; }
+            .page-title { font-size: 25px; }
+            .container { padding-top: 22px; }
+            .entity-list { gap: 9px; }
+            .row-inner { padding: 12px 13px; gap: 11px; }
+            .row-name { font-size: 14.5px; }
+            .type-icon { width: 35px; height: 35px; min-width: 35px; font-size: 14px; }
+            .entity-actions { grid-template-columns: repeat(2, 1fr); padding: 0 15px; }
+            .entity-card.open .entity-actions { padding: 4px 15px 16px 15px; }
+            .page-footer { padding: 12px 10px; gap: 10px; }
+            .footer-link { padding: 10px 18px; font-size: 13px; }
+        }
+
+        @media (max-height: 720px) {
+            .page-hero { padding: 26px 16px 32px 16px; }
+            .page-title { font-size: 23px; }
+            .uni-eyebrow { margin-bottom: 7px; }
+            .hero-badge { margin-top: 10px; padding: 6px 16px; font-size: 12px; }
+            .container { padding-top: 18px; }
+            .section-head { margin-bottom: 14px; }
+            .section-title { font-size: 18px; }
+            .section-note { font-size: 12px; }
+            .entity-list { gap: 8px; }
+            .row-inner { padding: 10px 13px; gap: 10px; }
+            .type-icon { width: 33px; height: 33px; min-width: 33px; font-size: 13px; }
+            .row-name { font-size: 14px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
     </style>
 </head>
 <body>
-    <div class="app-wrapper">
-        <header class="page-header">
-            <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="تبديل الوضع الليلي">
-                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
-                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            </button>
-            <span class="header-kicker">جامعة القصيم</span>
-            <h1 class="page-title">دليل التواصل</h1>
-            <span class="title-rule"></span>
-            <p class="page-subtitle">وسائل التواصل مع الجهات المختلفة للوصول إلى مختلف الخدمات.</p>
-        </header>
 
-        <main class="content-grid" id="content-grid">
-        </main>
+    <header class="page-hero">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="تبديل الوضع الليلي"><i class="fas fa-moon icon-moon"></i><i class="fas fa-sun icon-sun"></i></button>
+        <div class="hero-inner">
+            <div class="uni-eyebrow">جامعة القصيم</div>
+            <h1 class="page-title">دليل التواصل</h1>
+            <div class="hero-badge"><i class="fas fa-headset"></i><span>قنوات التواصل الرسمية</span></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="list-section">
+            <div class="section-head">
+                <h2 class="section-title">قائمة الجهات</h2>
+                <div class="title-divider"></div>
+                <p class="section-note">اضغط على الجهة للانتقال إلى وسائل التواصل الخاصة بها</p>
+            </div>
+            <div class="entity-list" id="entity-list"></div>
+        </section>
     </div>
 
-    <div id="emails-overlay" class="overlay-page">
-        <div class="overlay-header">
-            <button class="back-btn" onclick="closeEmailOverlay()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                رجوع
-            </button>
-            <h2 class="overlay-title">تواصل الكليات</h2>
-        </div>
-        <div class="overlay-content">
-            <div id="colleges-list-container" class="college-list">
+    <div class="modal-overlay" id="colleges-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="colleges-title">
+            <div class="modal-head">
+                <div class="modal-head-text">
+                    <h3 id="colleges-title">تواصل الكليات</h3>
+                    <p>صفحات التواصل الرسمية لكليات الجامعة</p>
+                </div>
+                <button class="modal-close" id="colleges-close" type="button" aria-label="إغلاق"><i class="fas fa-xmark"></i></button>
             </div>
+            <div class="modal-body" id="colleges-body"></div>
         </div>
     </div>
 
     <footer class="page-footer">
         <a href="https://t.me/Qassim_U" class="footer-link" target="_blank" rel="noopener noreferrer">
-            <span class="icon-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></span>
+            <span class="icon-bg"><i class="fas fa-users"></i></span>
             <span>Qassim_U</span>
         </a>
         <a href="https://t.me/Qassim_QU" class="footer-link" target="_blank" rel="noopener noreferrer">
-            <span class="icon-bg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"/><path d="M8 6v8"/></svg></span>
+            <span class="icon-bg"><i class="fas fa-bullhorn"></i></span>
             <span>Qassim_QU</span>
         </a>
     </footer>
 
     <script>
-        (function () {
-            let saved = null;
-            try { saved = localStorage.getItem('theme'); } catch (e) {}
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = saved || (prefersDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
+        (function initTheme() {
+            try {
+                const btn = document.getElementById('theme-toggle');
+                const meta = document.querySelector('meta[name="theme-color"]');
+                let saved = null;
+                try { saved = localStorage.getItem('qu-theme'); } catch (e) {}
+
+                if (saved === 'dark') {
+                    document.body.classList.add('dark');
+                    if (meta) meta.setAttribute('content', '#0d1520');
+                }
+
+                btn.addEventListener('click', function () {
+                    const isDark = document.body.classList.toggle('dark');
+                    try { localStorage.setItem('qu-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+                    if (meta) meta.setAttribute('content', isDark ? '#0d1520' : '#eef3f9');
+                });
+            } catch (e) {}
         })();
 
-        const ICONS = {
-            'book-user': '<path d="M15 13a3 3 0 1 0-6 0"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><circle cx="12" cy="8" r="2"/>',
-            'clipboard-check': '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
-            'headset': '<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/>',
-            'landmark': '<path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/>',
-            'graduation-cap': '<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
-            'hand-coins': '<path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/>',
-            'layout-grid': '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
-            'phone': '<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>',
-            'mail': '<path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/>',
-            'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
-            'building-2': '<path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>',
-            'chevron-left': '<path d="m15 18-6-6 6-6"/>'
-        };
+        const X_LOGO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
 
-        const X_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+        const ENTITIES = [
+            {
+                name: 'عمادة القبول والتسجيل',
+                icon: 'fa-clipboard-check',
+                color: '#3B82F6',
+                href: 'https://t.me/Qassim_R/223'
+            },
+            {
+                name: 'مركز خدمات المستفيدين',
+                icon: 'fa-headset',
+                color: '#14B8A6',
+                href: 'https://t.me/Qassim_R/224'
+            },
+            {
+                name: 'شؤون الكليات',
+                icon: 'fa-landmark',
+                color: '#6366F1',
+                actions: [
+                    { label: 'الهواتف', icon: 'fa-phone', color: '#10B981', href: 'https://t.me/Qassim_R/171' },
+                    { label: 'الإيميلات', icon: 'fa-envelope', color: '#3B82F6', action: 'colleges' },
+                    { label: 'المواقع', icon: 'fa-globe', color: '#0EA5E9', href: 'https://t.me/Qassim_R/229' },
+                    { label: 'منصة X', svg: X_LOGO, color: '#8B5CF6', href: 'https://t.me/Qassim_R/230' }
+                ]
+            },
+            {
+                name: 'عمادة شؤون الطلاب',
+                icon: 'fa-graduation-cap',
+                color: '#8B5CF6',
+                href: 'https://t.me/Qassim_R/226'
+            },
+            {
+                name: 'قسم المنح الداخلية',
+                icon: 'fa-hand-holding-dollar',
+                color: '#F59E0B',
+                href: 'https://t.me/Qassim_R/227'
+            },
+            {
+                name: 'أخرى',
+                icon: 'fa-table-cells-large',
+                color: '#64748B',
+                href: 'https://t.me/Qassim_R/228'
+            }
+        ];
 
-        function icon(name, cls) {
-            if (name === 'x') return X_ICON;
-            const body = ICONS[name] || '';
-            const c = cls ? ' class="' + cls + '"' : '';
-            return '<svg' + c + ' viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + body + '</svg>';
+        const COLLEGES = [
+            { name: 'كلية الأعمال والاقتصاد', url: 'https://www.qu.edu.sa/colleges/cbe/contact/' },
+            { name: 'كلية الشريعة', url: 'https://www.qu.edu.sa/colleges/csi/contact/' },
+            { name: 'كلية اللغات والعلوم الإنسانية', url: 'https://www.qu.edu.sa/colleges/asc/contact/' },
+            { name: 'كلية التربية', url: 'https://www.qu.edu.sa/colleges/coe/contact/' },
+            { name: 'كلية الفنون والتصاميم', url: 'https://www.qu.edu.sa/colleges/dhe/contact/' },
+            { name: 'كلية الحاسب', url: 'https://www.qu.edu.sa/colleges/coc/contact/' },
+            { name: 'كلية العلوم', url: 'https://www.qu.edu.sa/colleges/cos/contact/' },
+            { name: 'كلية الهندسة', url: 'https://www.qu.edu.sa/colleges/qec/contact/' },
+            { name: 'كلية العمارة والتخطيط', url: 'https://www.qu.edu.sa/colleges/cap/contact/' },
+            { name: 'كلية الزراعة والأغذية', url: 'https://www.qu.edu.sa/colleges/cavm/contact/' },
+            { name: 'كلية الطب', url: 'https://www.qu.edu.sa/colleges/med/contact/' },
+            { name: 'كلية العلوم الطبية التطبيقية', url: 'https://www.qu.edu.sa/colleges/cams/contact/' },
+            { name: 'كلية الصيدلة', url: 'https://www.qu.edu.sa/colleges/pharmacy/contact/' },
+            { name: 'كلية طب الأسنان', url: 'https://www.qu.edu.sa/colleges/dent/contact/' },
+            { name: 'كلية التمريض', url: 'https://www.qu.edu.sa/colleges/nursing/contact/' },
+            { name: 'كلية الطب البيطري', url: 'https://www.qu.edu.sa/colleges/vmc/contact/' },
+            { name: 'الكلية التطبيقية', url: 'https://www.qu.edu.sa/colleges/qac/contact/' }
+        ];
+
+        function buildRowInner(item, arrowIcon) {
+            return '<div class="row-inner">' +
+                       '<span class="type-icon"><i class="fas ' + item.icon + '"></i></span>' +
+                       '<span class="row-text"><span class="row-name">' + item.name + '</span></span>' +
+                       '<span class="row-arrow"><i class="fas ' + arrowIcon + '"></i></span>' +
+                   '</div>';
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const COLLEGES_CONTACTS = [
-                { name: "كلية الأعمال والاقتصاد", url: "https://www.qu.edu.sa/colleges/cbe/contact/" },
-                { name: "كلية الشريعة", url: "https://www.qu.edu.sa/colleges/csi/contact/" },
-                { name: "كلية اللغات والعلوم الإنسانية", url: "https://www.qu.edu.sa/colleges/asc/contact/" },
-                { name: "كلية التربية", url: "https://www.qu.edu.sa/colleges/coe/contact/" },
-                { name: "كلية الفنون والتصاميم", url: "https://www.qu.edu.sa/colleges/dhe/contact/" },
-                { name: "كلية الحاسب", url: "https://www.qu.edu.sa/colleges/coc/contact/" },
-                { name: "كلية العلوم", url: "https://www.qu.edu.sa/colleges/cos/contact/" },
-                { name: "كلية الهندسة", url: "https://www.qu.edu.sa/colleges/qec/contact/" },
-                { name: "كلية العمارة والتخطيط", url: "https://www.qu.edu.sa/colleges/cap/contact/" },
-                { name: "كلية الزراعة والأغذية", url: "https://www.qu.edu.sa/colleges/cavm/contact/" },
-                { name: "كلية الطب", url: "https://www.qu.edu.sa/colleges/med/contact/" },
-                { name: "كلية العلوم الطبية التطبيقية", url: "https://www.qu.edu.sa/colleges/cams/contact/" },
-                { name: "كلية الصيدلة", url: "https://www.qu.edu.sa/colleges/pharmacy/contact/" },
-                { name: "كلية طب الأسنان", url: "https://www.qu.edu.sa/colleges/dent/contact/" },
-                { name: "كلية التمريض", url: "https://www.qu.edu.sa/colleges/nursing/contact/" },
-                { name: "كلية الطب البيطري", url: "https://www.qu.edu.sa/colleges/vmc/contact/" },
-                { name: "الكلية التطبيقية", url: "https://www.qu.edu.sa/colleges/qac/contact/" }
-            ];
+        function buildEntity(item) {
+            if (item.actions) {
+                const buttons = item.actions.map(function (act) {
+                    const glyph = act.svg ? act.svg : '<i class="fas ' + act.icon + '"></i>';
+                    const inner = glyph + '<span>' + act.label + '</span>';
+                    if (act.action === 'colleges') {
+                        return '<button type="button" class="action-btn" data-open-colleges="1" style="--ai:' + act.color + '">' + inner + '</button>';
+                    }
+                    return '<a class="action-btn" href="' + act.href + '" target="_blank" rel="noopener noreferrer" style="--ai:' + act.color + '">' + inner + '</a>';
+                }).join('');
 
-            const COLLEGE_COLOR = "#6366F1";
+                return '<div class="entity-card expandable reveal" style="--ci:' + item.color + '" role="button" tabindex="0" aria-expanded="false">' +
+                           buildRowInner(item, 'fa-chevron-left') +
+                           '<div class="entity-actions">' + buttons + '</div>' +
+                       '</div>';
+            }
 
-            const SITE_DATA = [
-                {
-                    title: 'قائمة الجهات',
-                    icon: 'book-user',
-                    color: '#3B82F6',
-                    links: [
-                        { href: "https://t.me/Qassim_R/223", icon: "clipboard-check", text: "عمادة القبول والتسجيل", c: "#3B82F6" },
-                        { href: "https://t.me/Qassim_R/224", icon: "headset", text: "مركز رعاية المستفيدين", c: "#14B8A6" },
-                        {
-                            type: 'splitter',
-                            text: "شؤون الكليات",
-                            icon: "landmark",
-                            c: "#6366F1",
-                            actions: [
-                                { href: "https://t.me/Qassim_R/171", icon: "phone", c: "#10B981" },
-                                { action: "open_emails", icon: "mail", c: "#3B82F6" },
-                                { href: "https://t.me/Qassim_R/229", icon: "globe", c: "#0EA5E9" },
-                                { href: "https://t.me/Qassim_R/230", icon: "x", c: "#8B5CF6" }
-                            ]
-                        },
-                        { href: "https://t.me/Qassim_R/226", icon: "graduation-cap", text: "عمادة شؤون الطلاب", c: "#8B5CF6" },
-                        { href: "https://t.me/Qassim_R/227", icon: "hand-coins", text: "قسم المنح الداخلية", c: "#F59E0B" },
-                        { href: "https://t.me/Qassim_R/228", icon: "layout-grid", text: "أخرى", c: "#64748B" }
-                    ]
-                }
-            ];
-
-            const grid = document.getElementById('content-grid');
-            const overlayListContainer = document.getElementById('colleges-list-container');
-
-            const createCardHTML = (cardData) => {
-                const header = `
-                    <div class="card-header">
-                        <div class="icon-wrapper" style="--ci:${cardData.color || 'var(--accent-color)'}">${icon(cardData.icon)}</div>
-                        <h2 class="title">${cardData.title}</h2>
-                    </div>`;
-
-                const createLinksGroup = links => {
-                    return `<div class="links-group">${links.map(link => {
-
-                        if (link.type === 'splitter') {
-                            const actionButtons = link.actions.map(act => {
-                                if (act.action === 'open_emails') {
-                                    return `
-                                    <button onclick="openEmailOverlay()" class="icon-only-btn" style="--ci:${act.c || 'var(--accent-color)'}">
-                                        ${icon(act.icon)}
-                                    </button>`;
-                                }
-                                return `
-                                <a href="${act.href}" target="_blank" rel="noopener noreferrer" class="icon-only-btn" style="--ci:${act.c || 'var(--accent-color)'}">
-                                    ${icon(act.icon)}
-                                </a>`;
-                            }).join('');
-
-                            return `
-                            <div class="split-wrapper">
-                                <button class="contact-link main-trigger" onclick="activateSplitter(this)">
-                                    <div class="link-main-content">
-                                        <span class="link-chip" style="--ci:${link.c || 'var(--accent-color)'}">${icon(link.icon)}</span>
-                                        <span>${link.text}</span>
-                                    </div>
-                                    ${icon('chevron-left', 'link-arrow')}
-                                </button>
-                                <div class="actions-container">
-                                    ${actionButtons}
-                                </div>
-                            </div>`;
-                        }
-
-                        return `
-                        <a href="${link.href}" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <div class="link-main-content">
-                                <span class="link-chip" style="--ci:${link.c || 'var(--accent-color)'}">${icon(link.icon)}</span>
-                                <span>${link.text}</span>
-                            </div>
-                            ${icon('chevron-left', 'link-arrow')}
-                        </a>`;
-                    }).join('')}</div>`;
-                };
-
-                const body = createLinksGroup(cardData.links);
-                return `<section class="content-card">${header}${body}</section>`;
-            };
-
-            const populateOverlay = () => {
-                const listHTML = COLLEGES_CONTACTS.map(college => `
-                    <a href="${college.url}" target="_blank" rel="noopener noreferrer" class="contact-link">
-                        <div class="link-main-content">
-                            <span class="link-chip" style="--ci:${COLLEGE_COLOR}">${icon('building-2')}</span>
-                            <span>${college.name}</span>
-                        </div>
-                        ${icon('chevron-left', 'link-arrow')}
-                    </a>
-                `).join('');
-                overlayListContainer.innerHTML = listHTML;
-            };
-
-            const initialize = () => {
-                const cardHTML = SITE_DATA.map(createCardHTML).join('');
-                grid.insertAdjacentHTML('afterbegin', cardHTML);
-                populateOverlay();
-            };
-
-            initialize();
-        });
-
-        function activateSplitter(btn) {
-            const wrapper = btn.closest('.split-wrapper');
-            wrapper.classList.add('active');
+            return '<a class="entity-card reveal" style="--ci:' + item.color + '" href="' + item.href + '" target="_blank" rel="noopener noreferrer">' +
+                       buildRowInner(item, 'fa-chevron-left') +
+                   '</a>';
         }
 
-        function openEmailOverlay() {
-            const overlay = document.getElementById('emails-overlay');
-            overlay.classList.add('visible');
+        function renderColleges() {
+            document.getElementById('colleges-body').innerHTML = COLLEGES.map(function (c) {
+                return '<a class="college-row" href="' + c.url + '" target="_blank" rel="noopener noreferrer">' +
+                           '<span class="college-icon"><i class="fas fa-building-columns"></i></span>' +
+                           '<span>' + c.name + '</span>' +
+                           '<i class="fas fa-arrow-up-right-from-square go"></i>' +
+                       '</a>';
+            }).join('');
+        }
+
+        function setupReveal() {
+            const items = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                items.forEach(function (el) { el.classList.add('visible'); });
+                return;
+            }
+            const obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            items.forEach(function (el) { obs.observe(el); });
+        }
+
+        function openColleges() {
+            const overlay = document.getElementById('colleges-overlay');
+            overlay.classList.add('open');
+            overlay.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeEmailOverlay() {
-            const overlay = document.getElementById('emails-overlay');
-            overlay.classList.remove('visible');
+        function closeColleges() {
+            const overlay = document.getElementById('colleges-overlay');
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
         }
 
-        function toggleTheme() {
-            const root = document.documentElement;
-            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            root.setAttribute('data-theme', next);
-            try { localStorage.setItem('theme', next); } catch (e) {}
-            const meta = document.querySelector('meta[name="theme-color"]');
-            if (meta) meta.setAttribute('content', next === 'dark' ? '#0D1524' : '#F5F7FB');
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('entity-list').innerHTML = ENTITIES.map(buildEntity).join('');
+            renderColleges();
+
+            document.querySelectorAll('.entity-card.expandable').forEach(function (card) {
+                function toggle() {
+                    const open = card.classList.toggle('open');
+                    card.setAttribute('aria-expanded', open ? 'true' : 'false');
+                }
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('.action-btn')) return;
+                    toggle();
+                });
+                card.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggle();
+                    }
+                });
+            });
+
+            document.querySelectorAll('[data-open-colleges]').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    openColleges();
+                });
+            });
+
+            const overlay = document.getElementById('colleges-overlay');
+            document.getElementById('colleges-close').addEventListener('click', closeColleges);
+            overlay.addEventListener('click', function (e) { if (e.target === overlay) closeColleges(); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('open')) closeColleges();
+            });
+
+            setupReveal();
+        });
     </script>
 </body>
 </html>
